@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: WizTechnicalAssessment
+  name: wiz-technical-assessment
 spec:
   selector:
     app: tasky
