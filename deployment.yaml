@@ -18,10 +18,10 @@ spec:
       image: 017820672665.dkr.ecr.us-east-2.amazonaws.com/wiz-technical-assessment:latest
       resources:
         - requests:
-            cpu: "500m"
+            cpu: "250m"
             memory: "512Mi"
           limits:
-            cpu: "250m"
+            cpu: "5000m"
             memory: "768Mi"
       imagePullPolicy: Always
       ports:
