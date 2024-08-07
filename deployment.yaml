@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: wiz-technical-assessment
+  name: wiz-webserver-deployment
   labels:
     app: tasky
 spec:
@@ -14,6 +14,14 @@ spec:
       labels:
         app: tasky
     spec:
+      limits:
+      - default:
+          cpu: "500m"
+          memory: "512Mi"
+        defaultRequest:
+          cpu: "250m"
+          memory: "768Mi"
+        type: Container
       containers:
         - name: wiz-technical-assessment
           image: 017820672665.dkr.ecr.us-east-2.amazonaws.com/wiz-technical-assessment:latest
