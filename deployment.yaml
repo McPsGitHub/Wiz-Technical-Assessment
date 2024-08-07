@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: WizTechnicalAssessment
+  name: wiz-technical-assessment
   labels:
     app: tasky
 spec:
@@ -15,7 +15,7 @@ spec:
         app: tasky
     spec:
       containers:
-        - name: WizTechnicalAssessment
+        - name: wiz-technical-assessment
           image: 017820672665.dkr.ecr.us-east-2.amazonaws.com/wiz-technical-assessment:latest
           imagePullPolicy: Always
           ports:
