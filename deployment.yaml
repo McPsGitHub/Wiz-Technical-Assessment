@@ -18,7 +18,7 @@ spec:
       - name: wiz-technical-assessment
         image: 017820672665.dkr.ecr.us-east-2.amazonaws.com/wiz-technical-assessment:latest
         resources:
-          - requests:
+            requests:
               cpu: "250m"
               memory: "512Mi"
             limits:
