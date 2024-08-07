@@ -13,17 +13,17 @@ spec:
     metadata:
       labels:
         app: tasky
-    spec:
-      containers:
-        - name: wiz-technical-assessment
-          image: 017820672665.dkr.ecr.us-east-2.amazonaws.com/wiz-technical-assessment:latest
-          resources:
-            - requests:
-                cpu: "250m"
-                memory: "512Mi"
-              limits:
-                cpu: "5000m"
-                memory: "768Mi"
-          imagePullPolicy: Always
-          ports:
-            - containerPort: 8080
+      spec:
+        containers:
+          - name: wiz-technical-assessment
+            image: 017820672665.dkr.ecr.us-east-2.amazonaws.com/wiz-technical-assessment:latest
+            resources:
+              - requests:
+                  cpu: "250m"
+                  memory: "512Mi"
+                limits:
+                  cpu: "5000m"
+                  memory: "768Mi"
+            imagePullPolicy: Always
+            ports:
+              - containerPort: 8080
