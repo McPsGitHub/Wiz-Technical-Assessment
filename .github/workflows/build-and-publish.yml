@@ -72,7 +72,7 @@ jobs:
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           REPOSITORY: wiz-technical-assessment
-          IMAGE_TAG: ${{ steps.meta.outputs.tags }}
+          IMAGE_TAG: Latest
         run: |
           docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
