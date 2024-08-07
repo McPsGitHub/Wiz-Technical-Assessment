@@ -13,17 +13,16 @@ spec:
     metadata:
       labels:
         app: tasky
-  limits:
-    - default:
-        cpu: "500m"
-        memory: "512Mi"
-      defaultRequest:
-        cpu: "250m"
-        memory: "768Mi"
-        type: Container
   containers:
     - name: wiz-technical-assessment
       image: 017820672665.dkr.ecr.us-east-2.amazonaws.com/wiz-technical-assessment:latest
+      resources:
+        - requests:
+            cpu: "500m"
+            memory: "512Mi"
+          limits:
+            cpu: "250m"
+            memory: "768Mi"
       imagePullPolicy: Always
       ports:
         - containerPort: 8080
