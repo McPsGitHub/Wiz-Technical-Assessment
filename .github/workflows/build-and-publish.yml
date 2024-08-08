@@ -83,7 +83,7 @@ jobs:
       - name: Update MongoDB config   
         run: |
           kubectl apply -f mongodb-secret.yaml
-          kubectl apply -f mongodb-configmap.yaml
+          kubectl apply -f mongodb.yaml
 
       - name: Deploy to EKS
         run: |
