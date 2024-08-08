@@ -18,12 +18,6 @@ spec:
       - name: tasky-webserver
         image: 017820672665.dkr.ecr.us-east-2.amazonaws.com/wiz-technical-assessment:latest
         resources:
-            requests:
-              cpu: "250m"
-              memory: "512Mi"
-            limits:
-              cpu: "500m"
-              memory: "768Mi"
         imagePullPolicy: Always
         ports:
           - containerPort: 8080
