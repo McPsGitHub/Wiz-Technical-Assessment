@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wiz-webserver-deployment
+  labels:
+    app: tasky
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tasky
+  template:
+    metadata:
+      labels:
+        app: tasky
+    spec:
+      containers:
+      - name: tasky-webserver
+        image: 017820672665.dkr.ecr.us-east-2.amazonaws.com/wiz-technical-assessment:latest
+        resources:
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 8080
+        env:
+        - name: MONGODB_HOST
+          value: mongodb-external        
+        - name: MONGODB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secret
+              key: username
+        - name: MONGODB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secret
+              key: password
