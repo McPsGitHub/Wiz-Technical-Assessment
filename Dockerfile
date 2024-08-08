@@ -21,4 +21,4 @@ EXPOSE 8080
 ENTRYPOINT ["/app/tasky"]
 
 # Run the Go application
-CMD ["go", "run", "main.go"]
+# CMD ["go", "run", "main.go"]

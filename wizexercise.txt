@@ -1,2 +1,4 @@
-# I have been asked to create an arbitrary file with this name. 
-# Not sure why but let's see!!!
+# Assuming that this file will get copied based on the copy command within it
+# If it doesn't I can copy the file by adding the following to the docker file
+# Copy the wizexercise.txt file into the image
+# COPY wizexercise.txt /app/wizexercise.txt
