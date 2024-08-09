@@ -14,7 +14,6 @@ spec:
       labels:
         app: tasky
     spec:
-      serviceAccountName: wiz-webserver-service
       containers:
       - name: tasky-webserver
         image: 017820672665.dkr.ecr.us-east-2.amazonaws.com/wiz-technical-assessment:latest
