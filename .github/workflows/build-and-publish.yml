@@ -71,10 +71,6 @@ jobs:
       - name: Update kube config
         run: aws eks update-kubeconfig --name Wiz-EKS-Cluster
       
- #     - name: Update node  
- #       run: |
- #         kubectl apply -f pod-update.yaml
-      
       - name: Update MongoDB config   
         run: |
           kubectl apply -f mongodb-secret.yaml

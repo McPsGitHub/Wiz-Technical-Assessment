@@ -14,7 +14,7 @@ spec:
       labels:
         app: tasky
     spec:
-      serviceAccountName: webapp-sa
+      serviceAccountName: wiz-webserver-service
       containers:
       - name: tasky-webserver
         image: 017820672665.dkr.ecr.us-east-2.amazonaws.com/wiz-technical-assessment:latest
@@ -23,15 +23,27 @@ spec:
         ports:
           - containerPort: 8080
         env:
-        - name: MONGODB_HOST
-          value: mongodb-external        
-        - name: MONGODB_USERNAME
-          valueFrom:
-            secretKeyRef:
-              name: mongodb-secret
-              key: username
-        - name: MONGODB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mongodb-secret
-              key: password
+          - name: MONGODB_HOST
+            value: mongodb-external
+          - name: MONGODB_PORT
+            value: "27017" #MongoDB default port
+          - name: MONGODB_DB       
+            value: "myapp" 
+          - name: MONGODB_USER
+            valueFrom:
+              secretKeyRef:
+                name: mongodb-secret
+                key: username
+          - name: MONGODB_PASS
+            valueFrom:
+              secretKeyRef:
+                name: mongodb-secret
+                key: password 
+          - name: SECRET_KEY
+            valueFrom:
+              secretKeyRef:
+                name: mongodb-secret
+                key: SECRET_KEY
+#   - name: MONGODB_URI
+#       value: 'MONGODB_URI="mongodb://$(MONGODB_USER):$(MONGODB_PASS)@$(MONGODB_HOST):$(MONGODB_PORT)'
+# priorityClassName: high-priority 
