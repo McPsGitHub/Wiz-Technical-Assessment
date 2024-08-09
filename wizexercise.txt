@@ -2,5 +2,3 @@
 # If it doesn't I can copy the file by adding the following to the docker file
 # Copy the wizexercise.txt file into the image
 # COPY wizexercise.txt /app/wizexercise.txt
-
-# new content
