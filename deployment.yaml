@@ -5,7 +5,7 @@ metadata:
   labels:
     app: tasky
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: tasky
@@ -43,6 +43,5 @@ spec:
               secretKeyRef:
                 name: mongodb-secret
                 key: SECRET_KEY
-#   - name: MONGODB_URI
-#       value: 'MONGODB_URI="mongodb://$(MONGODB_USER):$(MONGODB_PASS)@$(MONGODB_HOST):$(MONGODB_PORT)'
-# priorityClassName: high-priority 
+          - name: MONGODB_URI
+            value: 'mongodb://$(MONGODB_USER):$(MONGODB_PASS)@$(MONGODB_HOST):$(MONGODB_PORT)/$(MONGODB_DB)'
