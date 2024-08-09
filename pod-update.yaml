@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: Pod-Update
+  name: pod-config
   namespace: default
 spec:
   containers:
-    - name: 
+     name: 
       image: 
       env:
         - name: MONGODB_HOST
@@ -17,17 +17,17 @@ spec:
         - name: MONGODB_USER
           valueFrom:
             secretKeyRef:
-            name: mongodb-secret
-            key: username
+              name: mongodb-secret
+              key: username
         - name: MONGODB_PASS
           valueFrom:
             secretKeyRef:
-            name: mongodb-secret
-            key: password 
+              name: mongodb-secret
+              key: password 
         - name: SECRET_KEY
           valueFrom:
             secretKeyRef:
-            name: mongodb-secret
-            key: SECRET_KEY
+              name: mongodb-secret
+              key: SECRET_KEY
         - name: MONGODB_URI
           value: 'MONGODB_URI="mongodb://$(MONGODB_USER):$(MONGODB_PASS)@$(MONGODB_HOST):$(MONGODB_PORT)'
