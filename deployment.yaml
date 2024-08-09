@@ -23,7 +23,7 @@ spec:
           - containerPort: 8080
         env:
           - name: MONGODB_HOST
-            value: mongodb-external
+            value: ec2-18-227-107-220.us-east-2.compute.amazonaws.com
           - name: MONGODB_PORT
             value: "27017" #MongoDB default port
           - name: MONGODB_DB       
